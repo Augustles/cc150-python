@@ -1,5 +1,6 @@
+# coding=utf-8
 class Solution:
-    # 2.1
+    # 2.1 未排序链表(list)去重
     def removeDuplicates(self, head):
         if head is None or head.next is None: return head
         dummy = ListNode(-1); dummy.next = head
@@ -17,7 +18,7 @@ class Solution:
             current = current.next
         return dummy.next
     
-    # 2.2
+    # 2.2 链表倒数第n节点值
     def findNthElem(self, head, n):
         fast = head
         for i in range(n):

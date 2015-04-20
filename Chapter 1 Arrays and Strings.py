@@ -1,5 +1,6 @@
+# coding=utf-8
 class Solution:
-    # 1.1
+    # 1.1 字符是否唯一
     def uniqueChar(self, str):
         dict = {}
         for c in str:
@@ -9,11 +10,11 @@ class Solution:
                 return False
         return True
 
-    # 1.2
+    # 1.2 字符串反转
     def reverseStr(self, str):
         return str[::-1]
 
-    # 1.3
+    # 1.3 两个字符串是否为变位词，anagram回文构词法,由颠倒字母顺序组成的单词
     def isAnagram(self, str1, str2):
         dict1 = {}; dict2 = {}
         for c in str1:
@@ -23,14 +24,14 @@ class Solution:
         if dict1 == dict2: return True
         else: return False
     
-    # 1.4
+    # 1.4 空格替换为%20
     def replaceChar(self, str):
         ss = list(str)
         for i in range(len(ss)):
             if ss[i] == " ": ss[i] = "%20"
         return "".join(ss)
     
-    # 1.5
+    # 1.5 字符串去重
     def compress(self, input):
         if input is None or len(input) == 0 or len(input) == 1: return input
         prev = input[:1]; cnt = 1
@@ -44,11 +45,11 @@ class Solution:
         if len(res) >= len(input): return input
         else: return res
 
-    # 1.6
+    # 1.6  图片旋转90
     def rotateImage(self, matrix):
         return [list(reversed(x)) for x in zip(*matrix)]
  
-    # 1.7
+    # 1.7  二维数组置0
     def setZero(self, matrix):
         row = [True for i in range(len(matrix))]
         col = [True for j in range(len(matrix[0]))]
@@ -61,7 +62,7 @@ class Solution:
                 if row[i] == False or col[j] == False:
                     matrix[i][j] = 0
 
-    # 1.8
+    # 1.8 调用一次子字符串判断确认s2是否为s1的旋转字符
     def isRotation(self, str1, str2):
         if str1 is None and str2 is None: return True
         if len(str1) != len(str2): return False
